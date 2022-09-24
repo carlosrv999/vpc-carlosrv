@@ -1,0 +1,1020 @@
+{
+ "Resources": {
+  "CdkSampleLibnewVPC28C91E15": {
+   "Type": "AWS::EC2::VPC",
+   "Properties": {
+    "CidrBlock": "10.0.0.0/20",
+    "EnableDnsHostnames": true,
+    "EnableDnsSupport": true,
+    "InstanceTenancy": "default",
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/Resource"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPrivate1Subnet1SubnetB5C45AA4": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "AvailabilityZone": {
+     "Fn::Select": [
+      0,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.0.0.0/25",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "SubnetPrivate-1"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Isolated"
+     },
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-1Subnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-1Subnet1/Subnet"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPrivate1Subnet1RouteTable1A406FA7": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-1Subnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-1Subnet1/RouteTable"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPrivate1Subnet1RouteTableAssociation7BC26BA0": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPrivate1Subnet1RouteTable1A406FA7"
+    },
+    "SubnetId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPrivate1Subnet1SubnetB5C45AA4"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-1Subnet1/RouteTableAssociation"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPrivate1Subnet2Subnet78CED4E6": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "AvailabilityZone": {
+     "Fn::Select": [
+      1,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.0.0.128/25",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "SubnetPrivate-1"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Isolated"
+     },
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-1Subnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-1Subnet2/Subnet"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPrivate1Subnet2RouteTable425E34F5": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-1Subnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-1Subnet2/RouteTable"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPrivate1Subnet2RouteTableAssociationBD933862": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPrivate1Subnet2RouteTable425E34F5"
+    },
+    "SubnetId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPrivate1Subnet2Subnet78CED4E6"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-1Subnet2/RouteTableAssociation"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPrivate2Subnet1Subnet04B5E8AA": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "AvailabilityZone": {
+     "Fn::Select": [
+      0,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.0.1.0/25",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "SubnetPrivate-2"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Isolated"
+     },
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-2Subnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-2Subnet1/Subnet"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPrivate2Subnet1RouteTable16D717DB": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-2Subnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-2Subnet1/RouteTable"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPrivate2Subnet1RouteTableAssociation052D963B": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPrivate2Subnet1RouteTable16D717DB"
+    },
+    "SubnetId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPrivate2Subnet1Subnet04B5E8AA"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-2Subnet1/RouteTableAssociation"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPrivate2Subnet2Subnet55B0106C": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "AvailabilityZone": {
+     "Fn::Select": [
+      1,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.0.1.128/25",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "SubnetPrivate-2"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Isolated"
+     },
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-2Subnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-2Subnet2/Subnet"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPrivate2Subnet2RouteTableD424C3D0": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-2Subnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-2Subnet2/RouteTable"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPrivate2Subnet2RouteTableAssociation09BA6C51": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPrivate2Subnet2RouteTableD424C3D0"
+    },
+    "SubnetId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPrivate2Subnet2Subnet55B0106C"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-2Subnet2/RouteTableAssociation"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPrivate3Subnet1Subnet8991CF58": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "AvailabilityZone": {
+     "Fn::Select": [
+      0,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.0.2.0/25",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "SubnetPrivate-3"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Isolated"
+     },
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-3Subnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-3Subnet1/Subnet"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPrivate3Subnet1RouteTableA8DFB0A0": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-3Subnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-3Subnet1/RouteTable"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPrivate3Subnet1RouteTableAssociation4DB1ED4F": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPrivate3Subnet1RouteTableA8DFB0A0"
+    },
+    "SubnetId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPrivate3Subnet1Subnet8991CF58"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-3Subnet1/RouteTableAssociation"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPrivate3Subnet2SubnetE3E9F651": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "AvailabilityZone": {
+     "Fn::Select": [
+      1,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.0.2.128/25",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "SubnetPrivate-3"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Isolated"
+     },
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-3Subnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-3Subnet2/Subnet"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPrivate3Subnet2RouteTable2963CE8F": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-3Subnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-3Subnet2/RouteTable"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPrivate3Subnet2RouteTableAssociation1AFF442E": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPrivate3Subnet2RouteTable2963CE8F"
+    },
+    "SubnetId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPrivate3Subnet2SubnetE3E9F651"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-3Subnet2/RouteTableAssociation"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPublic1Subnet1Subnet60D104A1": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "AvailabilityZone": {
+     "Fn::Select": [
+      0,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.0.3.0/25",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "SubnetPublic-1"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet1/Subnet"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPublic1Subnet1RouteTable65E00D5E": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet1/RouteTable"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPublic1Subnet1RouteTableAssociationBE2A7CE6": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPublic1Subnet1RouteTable65E00D5E"
+    },
+    "SubnetId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPublic1Subnet1Subnet60D104A1"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet1/RouteTableAssociation"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPublic1Subnet1DefaultRoute26261024": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPublic1Subnet1RouteTable65E00D5E"
+    },
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "CdkSampleLibnewVPCIGW2DBF60DF"
+    }
+   },
+   "DependsOn": [
+    "CdkSampleLibnewVPCVPCGWAA1CAFE1"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet1/DefaultRoute"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPublic1Subnet2SubnetAEF0CD3B": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "AvailabilityZone": {
+     "Fn::Select": [
+      1,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.0.3.128/25",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "SubnetPublic-1"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet2/Subnet"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPublic1Subnet2RouteTableAFDAD0EB": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet2/RouteTable"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPublic1Subnet2RouteTableAssociationFF85C6D7": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPublic1Subnet2RouteTableAFDAD0EB"
+    },
+    "SubnetId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPublic1Subnet2SubnetAEF0CD3B"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet2/RouteTableAssociation"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPublic1Subnet2DefaultRoute3D7BBE09": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPublic1Subnet2RouteTableAFDAD0EB"
+    },
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "CdkSampleLibnewVPCIGW2DBF60DF"
+    }
+   },
+   "DependsOn": [
+    "CdkSampleLibnewVPCVPCGWAA1CAFE1"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet2/DefaultRoute"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPublic2Subnet1SubnetA3BB343F": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "AvailabilityZone": {
+     "Fn::Select": [
+      0,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.0.4.0/25",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "SubnetPublic-2"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet1/Subnet"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPublic2Subnet1RouteTable025767C8": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet1/RouteTable"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPublic2Subnet1RouteTableAssociationE98E4EE3": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPublic2Subnet1RouteTable025767C8"
+    },
+    "SubnetId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPublic2Subnet1SubnetA3BB343F"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet1/RouteTableAssociation"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPublic2Subnet1DefaultRouteB26F3460": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPublic2Subnet1RouteTable025767C8"
+    },
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "CdkSampleLibnewVPCIGW2DBF60DF"
+    }
+   },
+   "DependsOn": [
+    "CdkSampleLibnewVPCVPCGWAA1CAFE1"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet1/DefaultRoute"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPublic2Subnet2Subnet03C808F5": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "AvailabilityZone": {
+     "Fn::Select": [
+      1,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.0.4.128/25",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "SubnetPublic-2"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet2/Subnet"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPublic2Subnet2RouteTableC70AE5BC": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet2/RouteTable"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPublic2Subnet2RouteTableAssociation2E78D3B3": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPublic2Subnet2RouteTableC70AE5BC"
+    },
+    "SubnetId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPublic2Subnet2Subnet03C808F5"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet2/RouteTableAssociation"
+   }
+  },
+  "CdkSampleLibnewVPCSubnetPublic2Subnet2DefaultRouteF8C9ADEE": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "CdkSampleLibnewVPCSubnetPublic2Subnet2RouteTableC70AE5BC"
+    },
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "CdkSampleLibnewVPCIGW2DBF60DF"
+    }
+   },
+   "DependsOn": [
+    "CdkSampleLibnewVPCVPCGWAA1CAFE1"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet2/DefaultRoute"
+   }
+  },
+  "CdkSampleLibnewVPCIGW2DBF60DF": {
+   "Type": "AWS::EC2::InternetGateway",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "MyStack/Cdk-Sample-Lib/newVPC"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/IGW"
+   }
+  },
+  "CdkSampleLibnewVPCVPCGWAA1CAFE1": {
+   "Type": "AWS::EC2::VPCGatewayAttachment",
+   "Properties": {
+    "VpcId": {
+     "Ref": "CdkSampleLibnewVPC28C91E15"
+    },
+    "InternetGatewayId": {
+     "Ref": "CdkSampleLibnewVPCIGW2DBF60DF"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/Cdk-Sample-Lib/newVPC/VPCGW"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/12OwQ6CMBBEv4V7qYJGz4SD8UbAcDVtWeMKtIZuIYbw7xYlwXjamZdM3sZ8v+NRIAYbqqoOG5R8LEiomnl0BRXzsXwqlt50maUs67AXBIWTGmiGa8qNI7gI2cDKV5ZYaxQKQqNZ5mSD6m85h7Mm6Dw8ecUgXot0aQn5r+4taJpYDta4Tn1Gvzk1usLZMTFtKuAPu+mjA4+OfBs8LGLYOU3YAs+/9w0A7v3l/QAAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "MyStack/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Conditions": {
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-2"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

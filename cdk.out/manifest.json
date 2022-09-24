@@ -1,0 +1,292 @@
+{
+  "version": "21.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "MyStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "MyStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "MyStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "MyStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/8c1d453b7c616ddb226ba4d6f365cf047e034d9c16c053850cec1af3f2062c4e.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "MyStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "MyStack.assets"
+      ],
+      "metadata": {
+        "/MyStack/Cdk-Sample-Lib/newVPC/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPC28C91E15"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-1Subnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPrivate1Subnet1SubnetB5C45AA4"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-1Subnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPrivate1Subnet1RouteTable1A406FA7"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-1Subnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPrivate1Subnet1RouteTableAssociation7BC26BA0"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-1Subnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPrivate1Subnet2Subnet78CED4E6"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-1Subnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPrivate1Subnet2RouteTable425E34F5"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-1Subnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPrivate1Subnet2RouteTableAssociationBD933862"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-2Subnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPrivate2Subnet1Subnet04B5E8AA"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-2Subnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPrivate2Subnet1RouteTable16D717DB"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-2Subnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPrivate2Subnet1RouteTableAssociation052D963B"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-2Subnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPrivate2Subnet2Subnet55B0106C"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-2Subnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPrivate2Subnet2RouteTableD424C3D0"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-2Subnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPrivate2Subnet2RouteTableAssociation09BA6C51"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-3Subnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPrivate3Subnet1Subnet8991CF58"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-3Subnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPrivate3Subnet1RouteTableA8DFB0A0"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-3Subnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPrivate3Subnet1RouteTableAssociation4DB1ED4F"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-3Subnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPrivate3Subnet2SubnetE3E9F651"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-3Subnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPrivate3Subnet2RouteTable2963CE8F"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPrivate-3Subnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPrivate3Subnet2RouteTableAssociation1AFF442E"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPublic1Subnet1Subnet60D104A1"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPublic1Subnet1RouteTable65E00D5E"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPublic1Subnet1RouteTableAssociationBE2A7CE6"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPublic1Subnet1DefaultRoute26261024"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPublic1Subnet2SubnetAEF0CD3B"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPublic1Subnet2RouteTableAFDAD0EB"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPublic1Subnet2RouteTableAssociationFF85C6D7"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-1Subnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPublic1Subnet2DefaultRoute3D7BBE09"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPublic2Subnet1SubnetA3BB343F"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPublic2Subnet1RouteTable025767C8"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPublic2Subnet1RouteTableAssociationE98E4EE3"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPublic2Subnet1DefaultRouteB26F3460"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPublic2Subnet2Subnet03C808F5"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPublic2Subnet2RouteTableC70AE5BC"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPublic2Subnet2RouteTableAssociation2E78D3B3"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/SubnetPublic-2Subnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCSubnetPublic2Subnet2DefaultRouteF8C9ADEE"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCIGW2DBF60DF"
+          }
+        ],
+        "/MyStack/Cdk-Sample-Lib/newVPC/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkSampleLibnewVPCVPCGWAA1CAFE1"
+          }
+        ],
+        "/MyStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/MyStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/MyStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/MyStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "MyStack"
+    }
+  }
+}
